@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <nav>
+        <h1> LOGO</h1>
+
+        <div class="subnav">
+            <input oninput="searchh()" type="text" placeholder="search want you want" id="search" class="find" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="sidenav">
+            <span>
+                <i class="fa-regular fa-user"> </i>
+                <p>Signin</p>
+            </span>
+            <i class="fa-solid fa-phone-volume"></i>
+            <p class="phone"> Call Anytime <span>+91-9884922892</span></p>
+            <i onclick="carts()" class="fa-solid fa-cart-shopping"></i>
+
+            <div id="carticon">
+                <p id="num"> </p>
+            </div>
+    </nav>
+
+
+
+    <!-- side cart -->
+    <div class="addtocart" id="cartbox">
+        <div class="one">
+            <h1> Cart Items</h1>
+            <i onclick="wrong()" class="fa-solid fa-circle-xmark"></i>
+        </div>
+
+        <div class="center" id="center">
+
+        </div>
+        <div class="price">
+            <h2> Total Price</h2>
+            <h3 id="total"> 00000</h3>
+        </div>
+        <div class="checkout">
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+    <div class="filter">
+        <label>Filter by Price :</label>
+
+        <select id="priceFilter" onchange="filterProducts()">
+            <option value="all">All</option>
+            <option value="0-100">Below $100</option>
+            <option value="100-200">$100 - $200</option>
+            <option value="200-500">$200 - $500</option>
+        </select>
+
+    </div>
+
+    <div class="dappa">
+
+        <!--<div class="basic">
+            <div class="col-one">
+                <img src="./apple.png">
+            </div>
+            <div class="col-two">
+                <p> crop organic</p>
+                <h1>
+                    strawberries
+                </h1>
+                <h3>
+                    <span>$</span>12.00
+                </h3>
+                <button>Add to cart</button>
+            </div>
+        </div>-->
+    </div>
+    <script src="./index.js"> </script>
+</body>
+
+</html>

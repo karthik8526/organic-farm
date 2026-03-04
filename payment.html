@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="paymentcontainer">
+        <div class="paymentbox">
+            <div class="uppayment">
+
+            </div>
+            <div class="downpayment">
+                <div class="paymentcard">
+                    <div class="atmcards">
+                        <span class="atm1">
+                            <input type="radio" name="atmcard" id="mastercard" value="mastercard">
+                            <img src="./images/atm1.png" alt="atmcard">
+                        </span>
+                        <span class="atm2">
+                            <input type="radio" name="atmcard" id="visa" value="visa">
+                            <img src="./images/atm2.png" alt="atmcard">
+                        </span>
+                        <span class="atm3">
+                            <input type="radio" name="atmcard" id="rupay" value="rupay">
+                            <img src="./images/atm3.png" alt="atmcard">
+                        </span>
+                        <span class="atm4">
+                            <input type="radio" name="atmcard" id="cod" value="cod">
+                            <img src="./images/atm4.png" alt="atmcard">
+                        </span>
+
+                    </div>
+                    <form action="">
+                        <label for="cardnumber"> Card Number</label>
+                        <input type="number">
+                        <label for="cardnumber"> Card Holder</label>
+                        <input type="number">
+                        <label for="cardnumber"> Expiry Date</label>
+                        <input type="mon">
+                        <input type="number" placeholder="YYYY" min="1999" max="2020">
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

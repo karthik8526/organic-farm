@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <nav>
+        <h1> LOGO</h1>
+
+        <div class="subnav">
+            <input oninput="searchh2()" type="text" placeholder="search want you want" id="search2" class="find" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="sidenav">
+            <span>
+                <i class="fa-regular fa-user"> </i>
+                <p>Signin</p>
+            </span>
+            <i class="fa-solid fa-phone-volume"></i>
+            <p class="phone"> Call Anytime <span>+91-9884922892</span></p>
+            <i onclick="carts()" class="fa-solid fa-cart-shopping"></i>
+
+            <div id="carticon">
+                <p id="num"> </p>
+            </div>
+    </nav>
+
+
+
+    <!-- side cart -->
+    <div class="addtocart" id="cartbox">
+        <div class="one">
+            <h1> Cart Items</h1>
+            <i onclick="wrong()" class="fa-solid fa-circle-xmark"></i>
+        </div>
+
+        <div class="center" id="center">
+
+        </div>
+        <div class="price">
+            <h2> Total Price</h2>
+            <h3 id="total"> 00000</h3>
+        </div>
+    </div>
+    <div class="filter">
+        <label>Filter by Price :</label>
+
+
+        <select id="priceFilter" onchange="filterProducts()">
+            <option value="all">All</option>
+            <option value="0-100">Below $100</option>
+            <option value="100-200">$100 - $200</option>
+            <option value="200-500">$200 - $500</option>
+        </select>
+
+    </div>
+
+    <div class="dappa2">
+        <h1>hi</h1>
+
+    </div>
+    <script>
+        let vegetables = [
+            {
+                id: 1,
+                img: "./images/carrot",
+                name: "Apple",
+                price: 120,
+                qty: 0
+
+            },
+            {
+                id: 2,
+                img: "./images/avacado",
+                name: "Avacado",
+                price: 100,
+                qty: 0
+
+            },
+            {
+                id: 3,
+                img: "./images/banana",
+                name: "Banana",
+                price: 80,
+                qty: 0
+
+            },
+            {
+                id: 4,
+                img: "./images/coconut",
+                name: "Coconut",
+                price: 150,
+                qty: 0
+
+            },
+            {
+                id: 5,
+                img: "./images/custardapple",
+                name: "Custardapple",
+                price: 180,
+                qty: 0
+
+            },
+            {
+                id: 6,
+                img: "./images/darkgrapes",
+                name: "Darkgrapes",
+                price: 200,
+                qty: 0
+
+            },
+            {
+                id: 7,
+                img: "./images/dragonfruit",
+                name: "Dragonfruit",
+                price: 250,
+                qty: 0
+
+            },
+            {
+                id: 8,
+                img: "./images/greengrapes",
+                name: "Greengrapes",
+                price: 150,
+                qty: 0
+
+            },
+            {
+                id: 9,
+                img: "./images/guava",
+                name: "Guava",
+                price: 120,
+                qty: 0
+
+            },
+            {
+                id: 10,
+                img: "./images/jackfruit",
+                name: "Jackfruit",
+                price: 100,
+                qty: 0
+
+            },
+            {
+                id: 11,
+                img: "./images/mango",
+                name: "Mango",
+                price: 150,
+                qty: 0
+
+            },
+            {
+                id: 12,
+                img: "./images/muskmelon",
+                name: "Muskmelon",
+                price: 120,
+                qty: 0
+
+            },
+            {
+                id: 13,
+                img: "./images/orange",
+                name: "Orange",
+                price: 100,
+                qty: 0
+
+            },
+            {
+                id: 14,
+                img: "./images/papaya",
+                name: "Papaya",
+                price: 120,
+                qty: 0
+
+            },
+            {
+                id: 15,
+                img: "./images/pineapple",
+                name: "Pineapple",
+                price: 150,
+                qty: 0
+
+            },
+            {
+                id: 16,
+                img: "./images/pomogrenate",
+                name: "Pomogrenate",
+                price: 180,
+                qty: 0
+
+            },
+            {
+                id: 17,
+                img: "./images/sapota",
+                name: "Sapota",
+                price: 120,
+                qty: 0
+
+            },
+            {
+                id: 18,
+                img: "./images/strawberry",
+                name: "Strawberry",
+                price: 150,
+                qty: 0
+
+            },
+            {
+                id: 19,
+                img: "./images/sugarcane",
+                name: "Sugarcane",
+                price: 100,
+                qty: 0
+
+            },
+            {
+                id: 20,
+                img: "./images/watermelon",
+                name: "Watermelon",
+                price: 120,
+                qty: 0
+
+            }
+
+
+
+
+
+        ];
+
+
+
+
+        let filteredvegetables = [...vegetables];
+        let input2 = document.getElementById("search2");
+        let container2 = document.getElementsByClassName("dappa2")[0];
+
+        console.log(container2);
+
+        // container2.innerHTML = "";
+        // console.log(container2);
+
+        function searchh2() {
+            if (!container2) return;
+            container2.innerHTML = "";
+            // console.log(container2.innerHTML);
+
+            let count = 0;
+            let searchValue = input2.value.toLowerCase();
+            let result = filteredvegetables.filter((item) => {
+
+                return item.name.toLowerCase().startsWith(searchValue);
+            });
+            if (result.length === 0) {
+                container2.innerHTML = `
+            <div class="not-found">
+            <h1 style="font-size:25px">SEARCH NOT FOUND </h1>
+                <video autoplay muted loop class="bg-video">
+                     <source src="./images/gif1.mp4" type="video/mp4">
+                 </video>
+
+            </div>
+        `;
+                return;
+            } result.forEach((item) => {
+
+                container2.innerHTML += `
+    <div class="basic">
+            
+            <div class="col-one"> 
+                <img src="${item.img}.png">
+            </div>
+            <div class="col-two">
+                <p> crop organic</p>
+                <h3>
+                    ${item.name}
+                </h3>
+                <h3>
+                    <span>$</span>${item.price}
+                </h3>
+                <div class="qty">
+                <span  onclick="changeqtyss(${item.id},${item.qty - 1})"> - </span>
+                <span>${item.qty}</span>
+                <span onclick="changeqtyss(${item.id},${item.qty + 1})"> + </span>
+                </div>
+                
+                <button onclick="sample('${item.id}')">Add to cart</button>
+            </div>
+        </div>`
+            }
+
+
+            )
+        }
+    </script>
+</body>
+
+</html>
